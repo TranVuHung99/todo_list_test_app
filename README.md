@@ -1,7 +1,7 @@
 # Todo List App using GetX and GetStorage
 
-Flutter version: stable 2.2.3
-Dart version: 2.13.4
+- Flutter version: stable 2.2.3
+- Dart version: 2.13.4
 
 ## Running project
 - clone the project on github.
