@@ -20,12 +20,14 @@ class TodoListView extends StatelessWidget {
         return TodoItem(
           todo: todo,
           onToggle: (isCompleted) {
-            todoController.onUpdateCompleted(todo, isCompleted);
+              todoController.onUpdateCompleted(todo, isCompleted);
           },
           onDismissed: (_) {
             todoController.onDeleteTodo(todo.id);
             Get.snackbar('Remove!', "Task was remove successfully",
-                snackPosition: SnackPosition.BOTTOM);
+                snackPosition: SnackPosition.BOTTOM,
+                duration: Duration(seconds: 2)
+            );
           },
           onTap: () {
             Get.to(() => EditTodo(todo: todo), binding: EditTodoBind(

@@ -31,7 +31,8 @@ class TodoViewOptionButtons extends StatelessWidget {
                   final deletedCount = await todoController.onClearCompleted();
                   Get.snackbar('Successful', 'Tasks deleted: '
                       + deletedCount.toString(),
-                      snackPosition: SnackPosition.BOTTOM
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: Duration(seconds: 2)
                   );
               }
             },
@@ -41,9 +42,9 @@ class TodoViewOptionButtons extends StatelessWidget {
                   value: TodoViewOptions.toggleAll,
                   enabled: hasTodos,
                   child: Text(
-                    completedTodosAmount == todos.length
-                        ? 'Uncomplete All Tasks'
-                        : 'Complete All Tasks',
+                    completedTodosAmount < todos.length
+                      ? "Complete All Tasks"
+                      : "Uncomplete All Tasks",
                   ),
                 ),
                 PopupMenuItem(

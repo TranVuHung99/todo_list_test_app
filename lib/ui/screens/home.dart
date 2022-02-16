@@ -30,6 +30,7 @@ class Home extends StatelessWidget {
           ),
       ),
       floatingActionButton: FloatingActionButton(
+        key: const Key('homeView_addTodo_floatingActionButton'),
         tooltip: "Add Todo",
         onPressed: () => Get.to(() => EditTodo(),
             binding: EditTodoBind(repository: Get.find<TodoRepository>())),

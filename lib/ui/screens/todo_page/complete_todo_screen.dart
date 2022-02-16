@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/binding/edit_todo_binding.dart';
 import 'package:test_app/controllers/todo_controller.dart';
-import 'package:test_app/ui/components/todo_item.dart';
 import 'package:test_app/ui/components/todo_list_view.dart';
 
-import '../edit_todo.dart';
 
 
 class CompletedTodoScreen extends StatelessWidget {
@@ -19,7 +16,6 @@ class CompletedTodoScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Completed Tasks'),
-
       ),
       body: SafeArea(
           child: Obx(

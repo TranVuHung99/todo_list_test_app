@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:test_app/controllers/edit_todo_controller.dart';
-import 'package:test_app/controllers/todo_controller.dart';
 import 'package:test_app/data/models/todo.dart';
 
 class EditTodo extends StatelessWidget {
@@ -12,7 +11,6 @@ class EditTodo extends StatelessWidget {
 
 
   final Todo? todo;
-  // final TodoController todoController = Get.find<TodoController>();
   final EditTodoController editTodoController = Get.find<EditTodoController>();
   @override
   Widget build(BuildContext context) {

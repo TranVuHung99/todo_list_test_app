@@ -99,6 +99,67 @@ void main() {
         verify(() => repository.deleteTodo(mockTodos.first.id)).called(1);
       });
     });
+
+    group('Filter Todos', () {
+      test('get completed only todos',() {
+        final controller = createSubject();
+        controller.todos.value = mockTodos;
+        expect(
+            controller.getCompleteTodo().every((t) => t.isCompleted == true),
+            isTrue
+        ) ;
+      });
+
+      test('get unCompleted only todos',() {
+        final controller = createSubject();
+        controller.todos.value = mockTodos;
+        expect(
+            controller.getInCompleteTodo().every((t) => t.isCompleted != true),
+            isTrue
+        ) ;
+      });
+    });
+
+    group('onClearCompleted call', () {
+      setUp(() {
+        when(
+            () => repository.clearCompleted()
+        ).thenAnswer((_) async => 0);
+      });
+      test('clear completed todos using repository', (){
+        final controller = createSubject();
+        expect(
+            controller.onClearCompleted(),
+            completion(equals(0))
+        );
+        verify(() => repository.clearCompleted()).called(1);
+      });
+    });
+
+    group('onToggleCompleteAll call', () {
+      setUp(() {
+        when(
+              () => repository.completeAll(isCompleted: any(named: 'isCompleted')),
+        ).thenAnswer((_) async => 0);
+      });
+
+      test('completes all todos if some or none are uncompleted ', () {
+        final controller = createSubject();
+        controller.todos.value = mockTodos;
+        controller.onToggleCompleteAll();
+        verify(() => repository.completeAll(isCompleted: true)).called(1);
+      });
+
+      test('uncompletes all todos if all todos are completed', () {
+        final controller = createSubject();
+        controller.todos.value = mockTodos.map(
+                (t) => t.copyWith(isCompleted: true)
+        ).toList();
+
+        controller.onToggleCompleteAll();
+        verify(() => repository.completeAll(isCompleted: false)).called(1);
+      });
+    });
   });
 }
 
