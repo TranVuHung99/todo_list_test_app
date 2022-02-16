@@ -1,16 +1,13 @@
-# test_app
+# Todo List App using GetX and GetStorage
 
-A new Flutter project.
+Flutter version: stable 2.2.3
+Dart version: 2.13.4
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running project
+- clone the project on github.
+- Open project and run 'flutter pub get' from terminal to get all dependencies.
+- Connect to real devices of emulator and click the run icon ![image](https://user-images.githubusercontent.com/63271639/154324121-2691246e-7590-4c42-871a-07dbaf1556eb.png)
+to run project.
+## Running Tests
+To run all unit and widget tests use the command 'flutter test' on the terminal from the root of project.
+To run specific file right click on the file in project panel and choose 'Run test [filename]' option.
