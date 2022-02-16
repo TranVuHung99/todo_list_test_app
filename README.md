@@ -9,5 +9,5 @@
 - Connect to real devices of emulator and click the run icon ![image](https://user-images.githubusercontent.com/63271639/154324121-2691246e-7590-4c42-871a-07dbaf1556eb.png)
 to run project.
 ## Running Tests
-To run all unit and widget tests use the command 'flutter test' on the terminal from the root of project.
-To run specific file right click on the file in project panel and choose 'Run test [filename]' option.
+- To run all unit and widget tests use the command 'flutter test' on the terminal from the root of project.
+- To run specific file right click on the file in project panel and choose 'Run test [filename]' option.
